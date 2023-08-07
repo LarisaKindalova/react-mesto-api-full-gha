@@ -1,0 +1,9 @@
+.cards__photo {
+  display: block;
+  background: #c4c4c4;
+  border-radius: 10px 10px 0px 0px;
+  width: 282px;
+  height: 282px;
+  object-fit: cover;
+  object-position: center;
+}

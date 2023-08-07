@@ -1,0 +1,12 @@
+.header__burger-line {
+  transform: translateY(-50%);
+}
+
+.header__burger-line {
+  background: #fff;
+  height: 3px;
+  width: 100%;
+  position: absolute;
+  top: 56%;
+  left: 0;
+}

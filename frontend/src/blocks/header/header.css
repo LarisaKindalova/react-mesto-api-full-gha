@@ -1,0 +1,20 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid rgb(84, 84, 84, 0.7);
+  max-width: 880px;
+  width: 100%;
+  margin: 45px auto 39px;
+}
+
+.header_active {
+ position: relative;
+ border-top: 1px solid rgb(84, 84, 84, 0.7);
+ margin-top: 150px;
+}
+
+@media screen and (min-width: 768px) {
+  .header_active {
+    display: none;
+   }
+}

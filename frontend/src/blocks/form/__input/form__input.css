@@ -1,0 +1,19 @@
+.form__input {
+  background-color: transparent;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  color: #fff;
+  line-height: 17px;
+  width: 358px;
+  border: none;
+  border-bottom: 2px solid #ccc;
+  padding: 2px 0 13px;
+}
+
+@media screen and (max-width: 550px) {
+  .form__input{
+    width: 260px;
+    padding-bottom: 8px;
+  }
+}

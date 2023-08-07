@@ -1,0 +1,39 @@
+.header__burger  {
+  display: none;
+  background: none;
+  border: none;
+  height: 18px;
+  width: 24px;
+  position: relative;
+  top: 50%;
+  left: 0;
+  translate: -50%;
+  cursor: pointer;
+  margin: 35px 30px;
+}
+
+.header__burger:before,
+.header__burger:after {
+  background: #fff;
+  height: 3px;
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 0;
+}
+
+.header__burger:before,
+.header__burger:after {
+  content: "";
+  top: 0;
+}
+
+.header__burger:after {
+  top: 100%;
+}
+
+@media screen and (max-width: 698px) {
+  .header__burger {
+    display: flex;
+  }
+}
