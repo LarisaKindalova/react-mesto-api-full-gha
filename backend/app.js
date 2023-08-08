@@ -33,6 +33,13 @@ const limiter = rateLimit({
 app.use(limiter);
 app.use(helmet());
 app.use(requestLogger); // подклчаем логгер запросов
+
+app.get('/crash-test', () => {
+  setTimeout(() => {
+    throw new Error('Сервер сейчас упадёт');
+  }, 0);
+});
+
 app.use(router);
 
 mongoose.connect(MONGO_DB)
