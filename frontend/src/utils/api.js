@@ -107,7 +107,8 @@ class Api {
   }
   
  const api = new Api({
-    url: "http://localhost:3001",
+    // url: "http://localhost:3001",
+    url: "https://api.kind.nomoreparties.co",
       headers: {
         "Content-Type": "application/json",
       }

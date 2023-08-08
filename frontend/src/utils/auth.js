@@ -1,4 +1,5 @@
-export const BASE_URL = "http://localhost:3001"; //запрос авторизации на этот хост
+export const BASE_URL = "https://api.kind.nomoreparties.co";
+// "http://localhost:3001"; //запрос авторизации на этот хост
 
 function checkResponse(res) {
   if (res.ok) {
