@@ -6,7 +6,7 @@ const cookieParser = require('cookie-parser');
 const { errors } = require('celebrate');
 const cors = require('cors');
 
-const { PORT = 3000, MONGO_DB } = process.env;
+const { PORT = 3000, MONGO_DB = 'mongodb://127.0.0.1:27017/mestodb' } = process.env;
 
 const rateLimit = require('express-rate-limit'); // Для защиты от DoS-атак //https://www.npmjs.com/package/express-rate-limit
 const helmet = require('helmet'); // https://expressjs.com/ru/advanced/best-practice-security.html
