@@ -65,14 +65,11 @@ module.exports.getCurrentUser = (req, res, next) => {
 module.exports.getUserById = (req, res, next) => {
   console.log(req.params.userId);
   User.findById(req.params.userId)
-    .orFail()
+    .orFail(() => new NotFound('Пользователь с указанным id не найден'))
     .then((user) => res.send(user))
     .catch((err) => {
       if (err.name === 'CastError') {
         return next(new BadRequest('Переданы некорректные данные'));
-      }
-      if (err.name === 'DocumentNotFoundError') {
-        return next(new NotFound('Пользователь с указанным id не найден'));
       }
       return next(err);
     });
@@ -81,13 +78,11 @@ module.exports.getUserById = (req, res, next) => {
 module.exports.updateUserInfo = (req, res, next) => {
   const { name, about } = req.body;
   User.findByIdAndUpdate(req.user._id, { name, about }, { new: true, runValidators: true })
-    .orFail()
+    .orFail(() => new NotFound('Пользователь с указанным id не найден'))
     .then((user) => res.send(user))
     .catch((err) => {
       if (err.name === 'ValidationError') {
         return next(new BadRequest('Переданны некорретные даные при обновлении данных пользователя'));
-      } if (err.name === 'DocumentNotFoundError') {
-        return next(new NotFound('Пользователь с указанным id не найден'));
       }
       return next(err);
     });
@@ -96,13 +91,11 @@ module.exports.updateUserInfo = (req, res, next) => {
 module.exports.updateUserAvatar = (req, res, next) => {
   const { avatar } = req.body;
   User.findByIdAndUpdate(req.user._id, { avatar }, { new: true, runValidators: true })
-    .orFail()
+    .orFail(() => new NotFound('Пользователь с указанным id не найден'))
     .then((user) => res.send(user))
     .catch((err) => {
       if (err.name === 'ValidationError') {
         return next(new BadRequest('Переданны некорретные даные при обновлении аватара'));
-      } if (err.name === 'DocumentNotFoundError') {
-        return next(new NotFound('Пользователь с указанным id не найден'));
       }
       return next(err);
     });
